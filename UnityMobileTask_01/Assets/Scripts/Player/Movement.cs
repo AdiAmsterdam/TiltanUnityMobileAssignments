@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Move();
+        MouseMove();
     }
 
     private void Move()
@@ -39,6 +40,18 @@ public class Movement : MonoBehaviour
     
     private void MouseMove()
     {
-        
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+
+        if (groundPlane.Raycast(ray, out float distance))
+        {
+            Vector3 mouseWorldPosition = ray.GetPoint(distance);
+
+            Vector3 direction = mouseWorldPosition - transform.position;
+            direction.y = 0f;
+
+            transform.forward = direction;
+        }
     }
 }
