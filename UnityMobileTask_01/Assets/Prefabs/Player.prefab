@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2415509538b04b0b8132c640c6fed8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hand
+  hand: {fileID: 4787561649798003405}
   weapons:
   - {fileID: 0}
   - {fileID: 11400000, guid: 6a0df706e9d53f44fb139f368b2f63a5, type: 2}
