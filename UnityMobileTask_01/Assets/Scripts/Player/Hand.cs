@@ -9,7 +9,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private Weapon[] weapons;
     void Awake()
     {
-        weaponManager = gameObject.AddComponent<WeaponManager>();
+        weaponManager = gameObject.GetComponent<WeaponManager>();
     }
     
     void Update()

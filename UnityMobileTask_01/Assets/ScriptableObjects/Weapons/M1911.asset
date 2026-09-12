@@ -17,4 +17,4 @@ MonoBehaviour:
   bullet: {fileID: 11400000, guid: 75be1ca0ccdee7548899f1255d45f5f9, type: 2}
   weaponType: {fileID: 11400000, guid: a53267bbbe279174aae1871382c47b9a, type: 2}
   projectileCount: 1
-  shotsPerSecond: 1
+  firerate: 1

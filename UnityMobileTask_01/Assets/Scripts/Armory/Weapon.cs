@@ -11,6 +11,6 @@ namespace Armory
         public WeaponType weaponType;
         
         public int projectileCount;
-        public float shotsPerSecond;
+        public float firerate;
     }
 }

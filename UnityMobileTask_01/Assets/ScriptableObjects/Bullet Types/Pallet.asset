@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8409dc8308784c1e896df2794ea38786, type: 3}
   m_Name: Pallet
   m_EditorClassIdentifier: Assembly-CSharp::Armory.Bullet
-  sprite: {fileID: 0}
+  prefab: {fileID: 7747487190760621639, guid: 758fe6e441ef01a47a3d416d85ec37e2, type: 3}
   lifeTime: 4
   speed: 6
   damage: 2

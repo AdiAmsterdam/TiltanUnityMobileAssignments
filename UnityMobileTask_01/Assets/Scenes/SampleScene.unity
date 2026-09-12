@@ -616,6 +616,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8960640496886769708, guid: e3c9fd4c24a8aea4484f3c502ddcfc7f, type: 3}
+      propertyPath: bulletPools.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960640496886769708, guid: e3c9fd4c24a8aea4484f3c502ddcfc7f, type: 3}
+      propertyPath: 'bulletPools.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960640496886769708, guid: e3c9fd4c24a8aea4484f3c502ddcfc7f, type: 3}
+      propertyPath: 'bulletPools.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960640496886769708, guid: e3c9fd4c24a8aea4484f3c502ddcfc7f, type: 3}
+      propertyPath: 'bulletPools.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

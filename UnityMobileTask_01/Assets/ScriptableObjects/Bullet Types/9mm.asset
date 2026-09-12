@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8409dc8308784c1e896df2794ea38786, type: 3}
   m_Name: 9mm
   m_EditorClassIdentifier: Assembly-CSharp::Armory.Bullet
-  sprite: {fileID: 0}
+  prefab: {fileID: 2007135865305012754, guid: b5ca5c08a1f1f30479197b0c91443d8d, type: 3}
   lifeTime: 5
   speed: 10
   damage: 1

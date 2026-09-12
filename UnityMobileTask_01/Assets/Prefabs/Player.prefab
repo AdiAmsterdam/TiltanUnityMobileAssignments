@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4283076254297557266}
   - component: {fileID: 7392435353401156654}
+  - component: {fileID: 8960640496886769708}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -45,12 +46,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2415509538b04b0b8132c640c6fed8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hand
-  hand: {fileID: 4787561649798003405}
   weapons:
   - {fileID: 0}
   - {fileID: 11400000, guid: 6a0df706e9d53f44fb139f368b2f63a5, type: 2}
   - {fileID: 11400000, guid: d55691019a68c834da23860cf6fc3b81, type: 2}
   - {fileID: 11400000, guid: 24be9c6db44992e4cbbfaa41b4be770f, type: 2}
+--- !u!114 &8960640496886769708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112337473693546185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fffab0887664eaea0e6129aed53f869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Armory.WeaponManager
+  bulletPools: []
 --- !u!1 &4104558231233185455
 GameObject:
   m_ObjectHideFlags: 0
