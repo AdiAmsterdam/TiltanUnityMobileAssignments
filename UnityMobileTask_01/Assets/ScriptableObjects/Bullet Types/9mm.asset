@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Armory.Bullet
   prefab: {fileID: 2007135865305012754, guid: b5ca5c08a1f1f30479197b0c91443d8d, type: 3}
   lifeTime: 5
-  speed: 10
-  damage: 1
+  speed: 30
+  damage: 5

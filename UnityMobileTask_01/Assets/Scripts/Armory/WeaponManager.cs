@@ -10,6 +10,8 @@ namespace Armory
 
         private Weapon activeWeapon;
         private GameObject activeWeaponObject;
+        
+        private float nextFireTime;
 
         public void SwitchWeapon(Weapon weapon)
         {
@@ -49,13 +51,34 @@ namespace Armory
 
             activeWeaponObject.SetActive(true);
         }
-
+        
         public void Shoot()
         {
             if (!activeWeapon) return;
+            
+            if (Time.time < nextFireTime) return;
+            
+            if (activeWeapon.firerate <= 0f) return;
 
-            Transform shootingPoint =
-                activeWeaponObject.GetComponent<FirePoint>().firePoint;
+            FirePoint firePointComponent =
+                activeWeaponObject.GetComponentInChildren<FirePoint>();
+
+            if (!firePointComponent)
+            {
+                Debug.LogError("FirePoint component not found!");
+                return;
+            }
+
+            Transform shootingPoint = firePointComponent.firePoint;
+
+            if (!shootingPoint)
+            {
+                Debug.LogError("FirePoint Transform is not assigned!");
+                return;
+            }
+
+            // Set the next allowed firing time
+            nextFireTime = Time.time + (1f / activeWeapon.firerate);
 
             Bullet bulletData = activeWeapon.bullet;
             GameObject bulletPrefab = bulletData.prefab;
@@ -64,13 +87,10 @@ namespace Armory
 
             GameObject projectile = pool.GetObject();
 
-            projectile.transform.SetPositionAndRotation(
-                shootingPoint.position,
-                shootingPoint.rotation
+            projectile.transform.SetPositionAndRotation(shootingPoint.position, shootingPoint.rotation
             );
 
-            projectile.GetComponent<Projectile>()
-                .Initialize(bulletData, pool);
+            projectile.GetComponent<Projectile>().Initialize(bulletData, pool);
         }
 
         private ObjectPool GetOrCreatePool(GameObject bulletPrefab)

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Armory;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,32 +5,50 @@ using UnityEngine.InputSystem;
 public class Hand : MonoBehaviour
 {
     private WeaponManager weaponManager;
+
     [SerializeField] private Weapon[] weapons;
-    void Awake()
+
+    private void Awake()
     {
-        weaponManager = gameObject.GetComponent<WeaponManager>();
+        weaponManager = GetComponent<WeaponManager>();
     }
-    
-    void Update()
+
+    private void Update()
     {
+        if (Mouse.current != null &&
+            Mouse.current.leftButton.isPressed)
+        {
+            weaponManager.Shoot();
+        }
+
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            if (weapons != null) weaponManager.SwitchWeapon(weapons[0]);
+            EquipWeapon(0);
         }
 
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
-            if (weapons != null) weaponManager.SwitchWeapon(weapons[1]);
+            EquipWeapon(1);
         }
 
         if (Keyboard.current.digit3Key.wasPressedThisFrame)
         {
-            if (weapons != null) weaponManager.SwitchWeapon(weapons[2]);
+            EquipWeapon(2);
         }
 
         if (Keyboard.current.digit4Key.wasPressedThisFrame)
         {
-            if (weapons != null) weaponManager.SwitchWeapon(weapons[3]);
+            EquipWeapon(3);
         }
+    }
+
+    private void EquipWeapon(int index)
+    {
+        if (weapons == null || index >= weapons.Length)
+        {
+            return;
+        }
+
+        weaponManager.SwitchWeapon(weapons[index]);
     }
 }

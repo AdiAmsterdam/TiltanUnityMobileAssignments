@@ -16,7 +16,8 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.forward * (bulletData.speed * Time.deltaTime);
+        transform.localScale = Vector3.one * bulletData.damage;
+        transform.position -= transform.forward * (bulletData.speed * Time.deltaTime);
 
         lifeTimer += Time.deltaTime;
 
